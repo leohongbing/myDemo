@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="./CRSMessager.js"></script>
+</head>
+<body>
+<div>
+  content
+</div>
+<iframe src="http://localhost:9063/window%E8%B7%A8%E5%9F%9F/window1.html" frameborder="0"></iframe>
+<script type="text/javascript">
+  function getParentWindowHeight() {
+    return 'parent方法'
+  }
+  CRSMessager.bindCRSEvent("getParentWindowHeight1", (e) => {
+    console.log(e,'自定义parent事件')
+    return '自定义parent事件'
+  })
+
+  window.onload = function () {
+
+  }
+</script>
+</body>
+</html>

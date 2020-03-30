@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="./CRSMessager1.js"></script>
+</head>
+<body>
+<div>
+  window1
+  <script type="text/javascript">
+    window.onload = function() {
+      CRSMessager.invokeCRSMethod(window.parent, "getParentWindowHeight", { a:'a' },
+        (param) => {
+          console.log(param)
+        });
+
+      CRSMessager.dispatchCRSEvent(window.parent, 'getParentWindowHeight1', {b:'b'})
+    }
+  </script>
+</div>
+</body>
+</html>
