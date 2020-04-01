@@ -2,10 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/vue-cli3" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/vue-wxChat" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/webpack-box" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/webpack/05-06/my-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/webpack/05-07/my-project" vcs="Git" />
   </component>
 </project>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="./outTreeJSON.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  /* deep first search */
+  let json =  generateJsonData({ len:2, deep: 10, breadth: 1 });
+  function DFS(data) {
+    var queue = []
+    for (var i = 0; i < data.length; i++) {
+      var el = data[i]
+      queue.push(el)
+
+      // 取队列第一个
+      while (queue[0]){
+        var target = queue.shift(0);
+        if (target.hasChild) {
+          queue.push(target.child);
+        }
+        console.log(target)
+      }
+    }
+  }
+  console.log(json);
+  // DFS(json);
+</script>
+</body>
+</html>

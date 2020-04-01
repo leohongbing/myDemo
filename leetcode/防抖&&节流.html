@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  html{
+    height: 10000px;
+  }
+</style>
+<body>
+<div>
+  <button id="button">提交按钮</button>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var html = document.querySelector('html')
+    window.addEventListener('scroll', throttle(function () {
+        console.log(123)
+      }),false)
+
+    var button = document.getElementById('button')
+    button.onclick = debounce(function () {
+      console.log(234)
+    })
+
+  }
+  /**
+   * 节流
+   * 避免一个事件高频率触发，在一定时间内触发一次
+   * 原理：运用闭包存储一个标志变量 在一定时间后改变标志变量的值 达到一定时间后触发事件
+   * */
+  function throttle(fn) {
+    var flog = true
+    return function() {
+      if(!flog) return
+      flog = false
+      setTimeout(function () {
+          fn.apply(this, arguments)
+          flog = true
+      },500)
+    }
+  }
+  /**
+   * 防抖
+   * 避免按钮重复点击触发多次事件
+   * 原理：运用闭包存储变量 用于判断是否执行事件
+   * */
+  function debounce(fn) {
+    var time = null
+    return function () {
+      time && clearInterval(time) // 清除定时器
+      time = setTimeout(function () {
+        fn.apply(this, arguments)
+      },2000)
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue中key作用</title>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
+
+  <script type="text/javascript" src="../utils/utils.js"></script>
+</head>
+<body>
+<div id="app">
+  <div v-for="i in dataList" >{{ i }}</div>
+</div>
+<script type="text/javascript">
+  /*
+  * 不加key
+  * 1.diff速度更快
+  * 2.复用节点
+  * 3.可能会出现闪现情况
+  *
+  * 加key
+  * 1.更耗时
+  * 2.map映射比普通遍历更快
+  *
+  *
+  * */
+  var app = new Vue({
+    el: '#app',
+    data: {
+      dataList: [1, 2, 3, 4, 5]
+    },
+    methods:{
+      randomId: function(len){
+        return RandomId(len)
+      }
+    }
+  })
+  setTimeout(function () {
+    app.dataList = [4, 1, 3, 5, 2]
+  },4000)
+</script>
+</body>
+</html>
