@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 1. Object.prototype.toString.call()
+   * */
+  var arr = []
+
+  console.log(Object.prototype.toString.call(arr))
+
+  /**
+   * 2. instanceof
+   * */
+
+  console.log(arr instanceof Array)
+
+
+  /**
+   * 3. Array.isArray()
+   *
+   * Array.isArray与Object.prototype.toString.call()  兼容
+   * Array.isArray与instanceof  检测实例数组Array.isArray优于instanceof
+   *
+   * */
+  console.log(Array.isArray(arr))
+
+
+  /**
+   * 4. arr.constructor === Array
+   * */
+
+  console.log(arr.constructor === Array)
+</script>
+</body>
+</html>

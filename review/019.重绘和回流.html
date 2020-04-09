@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body{
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+<img src="./images/浏览器渲染过程.png" alt="" width="50%">
+<h3>浏览器渲染过程</h3>
+<p>将html解析为dom tree，style解析为style tree</p>
+<p>dom tree 和style tree 生成render tree</p>
+<p>回流：render tree大小位置发生改变，引起浏览器重新渲染页面</p>
+<p>重绘：render ttee的颜色、透明度等发生改变</p>
+
+<h3>避免回流</h3>
+<p>1. 批量修改dom样式</p>
+<p>2. 避免反复读取同一尺寸属性，用值缓存</p>
+<p>3. 复杂动画开启定位</p>
+<p>4. 开启css3硬件加速，GPU渲染页面</p>
+
+
+<h3>常见的触发硬件加速(合成层)的css属性：</h3>
+<span>transform/
+opacity/
+filters/
+Will-change
+transform: translateZ(0)
+</span>
+
+<h3>硬件加速的坑</h3>
+<p>如果你为太多元素使用css3硬件加速，会导致内存占用较大，会有性能问题。</p>
+<p>在GPU渲染字体会导致抗锯齿无效。这是因为GPU和CPU的算法不同。因此如果你不在动画结束的时候关闭硬件加速，会产生字体模糊</p>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
