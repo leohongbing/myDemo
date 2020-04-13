@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*持久化变量
+  * 1. 将i变为块级变量
+  * 2. 闭包
+  * */
+  // for (let i = 0; i< 10; i++){
+  //   setTimeout(() => {
+  //     console.log(i);
+  //   }, 1000)
+  // }
+
+  for (var i = 0; i< 10; i++){
+    setTimeout((i) => {
+      console.log(i);
+    }, 1000,i)
+  }
+</script>
+</body>
+</html>

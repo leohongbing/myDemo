@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*
+  * 请把两个数组 ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'] 和 ['A', 'B', 'C', 'D']，
+  * 合并为 ['A1', 'A2', 'A', 'B1', 'B2', 'B', 'C1', 'C2', 'C', 'D1', 'D2', 'D']。*/
+  //
+  // var arr1 = ['A1', 'B11','A2', 'C23','B1', 'B2', 'D43','C1', 'C2', 'D1','E1', 'D2']
+  // var arr2 = ['A', 'B', 'C', 'D']
+  // var arr = arr1.concat(arr2)
+  // arr.sort(function (a, b) {
+  //   var codeA = []
+  //   var codeB = []
+  //
+  //   for (var i = 0; i < a.length; i++) {
+  //     codeA.push(a.charCodeAt(i))
+  //   }
+  //   for (var j = 0; j < b.length; j++) {
+  //     codeB.push(b.charCodeAt(j))
+  //   }
+  //  var maxLen = Math.max(codeA.length, codeB.length)
+  //
+  //   for (var m = 0; m < maxLen; m++) {
+  //     if(codeA[m] > codeB[m]){
+  //       return 1
+  //     }else if(codeA.length === 1 && codeA[m] < codeB[m]){
+  //       if(codeB[0] === codeA[0]){
+  //         return 1
+  //       }else {
+  //         return -1
+  //       }
+  //     }else if(codeB.length === 1 && codeB[m] < codeA[m]){
+  //       if(codeA[0] === codeB[0]){
+  //         return 1
+  //       }else {
+  //         return -1
+  //       }
+  //     }
+  //   }
+  //
+  // })
+  //
+  // console.log(arr)
+
+
+  let arr1 = ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2"];
+  let arr2 = ["A", "B", "C", "D"];
+  console.log(
+    [...arr1, ...arr2]
+      .sort(
+        (a, b) => (
+          a.codePointAt(0) - b.codePointAt(0)
+          || b.length - a.length
+          || b.codePointAt(1) - a.codePointAt(1)
+        )
+      )
+  );
+</script>
+</body>
+</html>
