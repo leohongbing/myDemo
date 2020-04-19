@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  let arr = [[1, 2, 3], [4, 5, 6], [7, [8, 9]]]
+
+  let arr1 = arr.flat(Infinity);
+
+
+  console.log(arr1, flatten(arr), flatten2(arr))
+
+
+  /**
+   * 降维方法(递归)
+   * */
+  function flatten(arr) {
+    let flatArr = []
+    arr.map((item) => {
+      item.constructor === Array ?
+        flatArr.push(...flatten(item)) :
+        flatArr.push(item);
+    })
+    return flatArr
+  }
+
+  /**
+   * 降维（迭代）
+   * */
+  function flatten1(arr) {
+    let flatArr = [];
+    let queue = arr
+    while (queue[0]) {
+      let head = queue.shift();
+      if(Array.isArray(head)){
+        head.map((item) => {
+          item.constructor === Array ?
+            queue.push(item) :
+            flatArr.push(item)
+        })
+      }else {
+        flatArr.push(head)
+      }
+    }
+    return flatArr
+  }
+
+  function flatten2(arr) {
+    while (arr.some(item => Array.isArray(item))){
+      arr = [].concat(...arr)
+    }
+    return arr
+  }
+</script>
+</body>
+</html>

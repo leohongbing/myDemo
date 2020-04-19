@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a href="https://yq.aliyun.com/articles/399499"></a>
+<script type="text/javascript">
+  // 利用toString
+
+  let a = {
+    i: 1,
+    toString () {
+      return a.i++
+    }
+  }
+
+  if(a == 1 && a == 2 && a == 3) {
+    console.log('1');
+  }
+
+  // 利用valueOf
+
+   a = {
+    i: 1,
+    valueOf () {
+      return a.i++
+    }
+  }
+
+  if(a == 1 && a == 2 && a == 3) {
+    console.log('1');
+  }
+
+  // 数组这个就有点妖了
+
+   a = [1,2,3];
+  a.join = a.shift;
+  if(a == 1 && a == 2 && a == 3) {
+    console.log('1');
+  }
+
+  // ES6的symbol
+
+   a = {[Symbol.toPrimitive]: ((i) => () => ++i) (0)};
+  if(a == 1 && a == 2 && a == 3) {
+    console.log('1');
+  }
+</script>
+</body>
+</html>
