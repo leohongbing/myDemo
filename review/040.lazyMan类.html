@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*
+  LazyMan('Tony');
+  // Hi I am Tony
+
+  LazyMan('Tony').sleep(10).eat('lunch');
+  // Hi I am Tony
+  // 等待了10秒...
+  // I am eating lunch
+
+  LazyMan('Tony').eat('lunch').sleep(10).eat('dinner');
+  // Hi I am Tony
+  // I am eating lunch
+  // 等待了10秒...
+  // I am eating diner
+
+  LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk food');
+  // Hi I am Tony
+  // 等待了5秒...
+  // I am eating lunch
+  // I am eating dinner
+  // 等待了10秒...
+  // I am eating junk food
+  */
+
+  class LazyMan {
+    constructor(name) {
+      this.name = name
+      this.queue = []
+      console.log('Hi I am' + name)
+      setTimeout(()=> {
+        this.next()
+      }, 0)
+    }
+
+    eat(meal) {
+      let _this = this
+      let fn = function (meal) {
+        return function () {
+          setTimeout(() => {
+            console.log('I am eating' + meal)
+            _this.next()
+          }, 0)
+        }
+      }(meal)
+      this.queue.push(fn)
+      return this
+    }
+
+    sleepFirst(time) {
+      let _this = this
+      let fn = function (time) {
+        return function () {
+          setTimeout(() => {
+            console.log('等待了5秒...')
+            _this.next()
+          }, time * 1000)
+        }
+      }(time)
+      this.queue.unshift(fn)
+      return this
+    }
+
+    sleep(time) {
+      let _this = this
+      let fn = function (time) {
+        return function () {
+          setTimeout(() => {
+            console.log('等待了' + time)
+            _this.next()
+          }, time * 1000)
+        }
+      }(time)
+      this.queue.push(fn)
+      return this
+    }
+
+    next() {
+      let fn = this.queue.shift()
+      fn && fn()
+    }
+  }
+
+  var a = new LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(1).sleep(2).eat('junk food');
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  var name = 'h'
+  function test(...args) {
+    console.log(this.name, args)
+  }
+
+  var a = {
+    name: 'a.name'
+  }
+
+  test.apply(a, [1,2,3]); // 所有参数放到一个数组中
+  test.call(a, 1,2,3);
+  test.bind(a, 1,2,3)() // 非立即执行
+  // call比apply性能好
+</script>
+</body>
+</html>

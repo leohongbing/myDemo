@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
+  <script src="https://cdn.bootcss.com/vuex/3.1.3/vuex.js"></script>
+</head>
+<body>
+<div id="app">
+  <input v-model="message"/>
+</div>
+<script type="text/javascript">
+  const store = new Vuex.Store({
+    state: {
+      obj: {
+        message: ''
+      }
+    },
+    mutations: {
+      updateMessage (state, v) {
+        state.obj.message = v;
+      }
+    },
+    actions: {
+      updateMessage ({ commit }, v) {
+        commit('updateMessage', v);
+      }
+    }
+  })
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        // message: store.state.obj.message
+      }
+    },
+    computed: {
+      message: {
+        set (value) {
+          this.$store.dispatch('updateMessage', value);
+        },
+        get () {
+          this.$store = store
+          return this.$store.state.obj.message
+        }
+      }
+    },
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  Number.prototype.add = function (num) {
+    console.log('加法')
+    return this.valueOf() + num
+  }
+  Number.prototype.minus = function (num) {
+    console.log('减法')
+    return this.valueOf() - num
+  }
+  console.log((5).add(10).minus(1))
+</script>
+</body>
+</html>

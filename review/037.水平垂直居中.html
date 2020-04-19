@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .parent {
+    height: 100px;
+    background: black;
+  }
+
+  .child {
+    width: 20px;
+    height: 20px;
+    background: antiquewhite;
+  }
+
+  /*!*1. flex box*!*/
+  /*div.parent {*/
+  /*  display: flex;*/
+  /*  justify-content: center;*/
+  /*  align-items: center;*/
+  /*}*/
+
+  /*!* 2.利用定位+transform *!*/
+  /*div.parent {*/
+  /*  position: relative;*/
+  /*}*/
+  /*div.child {*/
+  /*  position: absolute;*/
+  /*  top: 50%;*/
+  /*  left: 50%;*/
+  /*  transform: translate(-50%, -50%);*/
+  /*}*/
+
+  /* 3. grid box*/
+  /*div.parent {*/
+  /*  display: grid;*/
+  /*}*/
+  /*div.child {*/
+  /*  justify-self: center;*/
+  /*  align-self: center;*/
+  /*}*/
+
+  /* 4.利用伪元素 */
+  /*div.parent {*/
+  /*  font-size: 0;*/
+  /*  text-align: center;*/
+  /*}*/
+  /*div.parent::before {*/
+  /*  content: "";*/
+  /*  display: inline-block;*/
+  /*  width: 0;*/
+  /*  height: 100%;*/
+  /*  vertical-align: middle;*/
+  /*}*/
+  /*div.child{*/
+  /*  display: inline-block;*/
+  /*  vertical-align: middle;*/
+  /*}*/
+
+  /* 5. */
+  /*div.parent{*/
+  /*  display:flex;*/
+  /*}*/
+  /*div.child{*/
+  /*  margin:auto;*/
+  /*}*/
+
+  /* 6.  */
+  div.parent {
+    position: relative;
+  }
+
+  div.child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+</style>
+<body>
+<!--水平垂直居中-->
+<!---->
+<div class="parent">
+  <div class="child"></div>
+</div>
+</body>
+</html>

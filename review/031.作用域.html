@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  // var a = 10
+  //
+  // function b() {
+  //   console.log(a)
+  // }
+  // b()
+
+  var a = undefined;
+  a = 10;
+  (function() {
+    var a = undefined
+    console.log(a)
+    a = 5
+    console.log(window.a)
+    a = 20
+    console.log(a)
+  })()
+  // undefined 10 20
+</script>
+</body>
+</html>

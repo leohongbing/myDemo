@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  img {
+    float: left
+  }
+
+  p {
+    overflow: hidden
+  }
+
+  .parent {
+    overflow: hidden;
+  }
+
+  .float {
+    float: left;
+  }
+
+  .box-wrapper {
+    border: 5px solid red;
+  }
+
+  .box-wrapper .box {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: green;
+  }
+  /*// 全浏览器通用的clearfix方案【推荐】*/
+  /*// 引入了zoom以支持IE6/7*/
+  /*// 同时加入:before以解决现代浏览器上边距折叠的问题*/
+     .clearfix:before,
+     .clearfix:after {
+       display: table;
+       content: " ";
+     }
+  .clearfix:after {
+    clear: both;
+  }
+  .clearfix{
+    *zoom: 1;
+  }
+</style>
+<body>
+<!--
+BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。
+创建 BFC 的方式有：
+1.html 根元素
+2.float 浮动
+3.绝对定位
+4.overflow 不为 visiable
+5.display 为表格布局或者弹性布局
+
+BFC 主要的作用是：
+清除浮动
+防止同一 BFC 容器中的相邻元素间的外边距重叠问题
+-->
+<!--BFC区域不会与float box 重叠-->
+<img src='./images/浏览器渲染过程.png' width="50%">
+<p>我是超长的文字
+<p>
+
+  <!--清除浮动-->
+<div class='parent'>
+  <div class='float'>浮动元素</div>
+</div>
+
+
+// html
+<div class="box-wrapper clearfix">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</div>
+</body>
+</html>
