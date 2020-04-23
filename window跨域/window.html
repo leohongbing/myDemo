@@ -9,18 +9,17 @@
 <div>
   content
 </div>
-<iframe src="http://localhost:9063/window%E8%B7%A8%E5%9F%9F/window1.html" frameborder="0"></iframe>
+<!--iframe 嵌入某个页面-->
+<iframe src="http://localhost:9090/myDemo/window%E8%B7%A8%E5%9F%9F/window1.html" frameborder="0" name="test"></iframe>
+
 <script type="text/javascript">
   function getParentWindowHeight() {
     return 'parent方法'
   }
-  CRSMessager.bindCRSEvent("getParentWindowHeight1", (e) => {
-    console.log(e,'自定义parent事件')
-    return '自定义parent事件'
-  })
 
   window.onload = function () {
-
+    /* 分发一个跨域自定义事件 */
+    CRSMessager.dispatchCRSEvent(window.frames["test"], 'getParentWindowHeight1', {b:'跨域自定义事件'})
   }
 </script>
 </body>

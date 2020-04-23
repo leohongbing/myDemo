@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src="" alt="" style="width: 480px!important;">
+<!--
+1、给图片设置max-width:300px
+2、给图片设置transform: scale(0.625,0.625)，但是占据的位置还是原来的480px
+3、给图片设置box-sizing: border-box;padding: 0 90px;，但图片左右会有90px的内边距
+4、给图片设置zoom: 0.625
+5、js获取元素使用imgs[0].setAttribute("style","width:300px!important;")或者imgs[0].style.cssText='width:300px;'
+6、给图片设置动画，from{width:300px;}to{width:300px;}，动画时间为0s，原理是CSS动画的样式优先级高于!important的特性
+-->
+<!--
+思路：间接或者直接的方式来控制样式的改变
+-->
+</body>
+</html>

@@ -9,13 +9,17 @@
 <div>
   window1
   <script type="text/javascript">
+    /* 绑定一个跨域自定义事件处理回调 */
+    CRSMessager.bindCRSEvent("getParentWindowHeight1", (e) => {
+      console.log(e, '自定义事件处理回调')
+    })
+
     window.onload = function() {
-      CRSMessager.invokeCRSMethod(window.parent, "getParentWindowHeight", { a:'a' },
+      /* 自定义事件 */
+      CRSMessager.invokeCRSMethod(window.parent, "getParentWindowHeight", null,
         (param) => {
           console.log(param)
         });
-
-      CRSMessager.dispatchCRSEvent(window.parent, 'getParentWindowHeight1', {b:'b'})
     }
   </script>
 </div>

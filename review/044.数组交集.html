@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  let arr1 = [3,1,2,2,2]
+  let arr2 = [3,2,2]
+
+  let arr = []
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if(arr1[i] === arr2[j]){
+        arr.push(arr2[j])
+        arr2.splice(j, 1)
+        break;
+      }
+    }
+  }
+  console.log(arr)
+  // arr = arr1.concat(arr2)
+  // for (let i = 0; i < arr.length; i++) {
+  //
+  // }
+  // console.log(arr)
+
+</script>
+</body>
+</html>
