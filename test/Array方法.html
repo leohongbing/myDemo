@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="../utils/utils.js"></script>
+<script type="text/javascript">
+  /**
+   * Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
+   * */
+  // 伪数组转数组
+  console.log('Array.from', Array.from('foo'));
+  // expected output: Array ["f", "o", "o"]
+
+  // 迭代创建新数组
+  var arr = [1, 2, 3]
+  console.log(Array.from(arr, x => x * x), arr);
+  // expected output: Array [2, 4, 6]
+
+  hr()
+  /**
+   * Array.of() 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。
+   * */
+  console.log('Array.of', Array.of(11), Array.of(1, 2, 3))
+  console.log('Array.of', Array(3))
+  hr()
+
+  /**
+   * concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+   * */
+  var arr1 = [1, 2, 3]
+  var arr2 = [3, 4, 5]
+  console.log('concat', arr1.concat(arr2), arr1, arr2)
+  hr()
+
+  /**
+   * every() 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。
+   * */
+  const isBelowThreshold = (currentValue) => currentValue < 40;
+  const array1 = [1, 30, 39, 29, 10, 40];
+  console.log('every', array1.every(isBelowThreshold));
+  hr()
+
+  /**
+   * fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。
+   * 改变原数组
+   * */
+  const arr3 = [1, 2, 3, 4];
+  console.log('fill', arr3.fill(0, 2, 4), arr3);
+  hr()
+
+  /**
+   * filter() 方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。
+   * */
+  let arr4 = [1, 2, 3, 4, 5, 6]
+  console.log('filter', arr4.filter(item => item > 4), arr4)
+  hr()
+
+  /**
+   * findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1
+   * callBack element index array
+   * */
+  const arr5 = [5, 12, 8, 130, 44];
+
+  const isLargeNumber = (element, index, array) => element > 13;
+
+  console.log('findIndex', arr5.findIndex(isLargeNumber));
+  hr()
+  /**
+   * flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
+   * */
+    //使用 Infinity，可展开任意深度的嵌套数组 扁平化数组
+  var arr6 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+  console.log('flat', arr6.flat(Infinity), arr6)
+  hr()
+
+  /**
+   * flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。
+   * 它与 map 连着深度值为1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
+   * */
+  let arr7 = ["it's Sunny in", "", "California"];
+
+  console.log(arr7.map(x => x.split(" ")))
+
+  console.log(arr7.flatMap(x => x.split(" ")))
+  console.log('flatMap', arr7)
+  hr()
+
+  /**
+   * forEach() 方法对数组的每个元素执行一次给定的函数。
+   * */
+  const arr8 = ['a', 'b', 'c'];
+  arr8.forEach(element => console.log('forEach', element));
+  hr()
+
+  /**
+   * includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，
+   * 如果包含则返回 true，否则返回false。
+   * */
+  const arr9 = [1, 2, 3];
+  console.log('includes', arr9.includes(2));
+  hr()
+
+  /**
+   * indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+   * */
+  const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+  console.log('indexOf', beasts.indexOf('bison'), beasts.lastIndexOf('bison'));
+  hr()
+
+  /**
+   * join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。
+   * 如果数组只有一个项目，那么将返回该项目而不使用分隔符。
+   * */
+  const elements = ['Fire', 'Air', 'Water'];
+  console.log('join', elements.join('-'));
+  hr()
+
+  /**
+   * map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一次提供的函数后的返回值。
+   * */
+  const arrb = [1, 4, 9, 16];
+  // pass a function to map
+  const map1 = arrb.map(x => x * 2);
+  console.log('map:', map1, arrb);
+  hr()
+
+  /**
+   * pop()方法从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。
+   * 改变原数组
+   * */
+  const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+  console.log('pop:', plants.pop(), plants);
+  hr()
+  /**
+   * push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度
+   * 改变原数组
+   * */
+  const animals = ['pigs', 'goats', 'sheep'];
+  const count = animals.push('cows');
+  console.log('push:', count, animals);
+  hr()
+
+  /**
+   * reduce() 方法对数组中的每个元素执行一个由您提供的reducer函数(升序执行)，将其结果汇总为单个返回值。
+   * */
+  const arrc = [1, 2, 3, 4];
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  // 1 + 2 + 3 + 4
+  console.log('reduce:', arrc.reduce(reducer), arrc);
+  hr()
+
+  /**
+   * reverse() 方法将数组中元素的位置颠倒，并返回该数组。
+   * 数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。
+   * 改变原数组
+   * */
+  const arrd = ['one', 'two', 'three'].reverse();
+  console.log('reverse:', arrd);
+  hr()
+
+  /**
+   * shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度
+   * 改变原数组
+   * */
+  const arre = [1, 2, 3];
+  const firstElement = arre.shift();
+  console.log('shift:', arre);
+  hr()
+
+  /**
+   * slice() 方法返回一个新的数组对象，
+   * 这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）
+   * */
+  const animals1 = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+  console.log('slice：', animals1.slice(2), animals1);
+  hr()
+
+  /**
+   * some() 方法测试数组中是不是至少有1个元素通过了被提供的函数测试。
+   * 它返回的是一个Boolean类型的值。
+   * */
+  const arrf = [1, 2, 3, 4, 5];
+  // checks whether an element is even
+  const even = (element) => element % 2 === 0;
+  console.log('some:', arrf.some(even));
+  hr()
+
+  /**
+   * sort() 方法用原地算法对数组的元素进行排序，并返回数组
+   * 默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的
+   * 如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前；
+   * 如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。
+   * 备注： ECMAScript 标准并不保证这一行为，而且也不是所有浏览器都会遵守（例如 Mozilla 在 2003 年之前的版本）；
+   * 如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。
+   * */
+  const months = ['March', 'Jan', 'Feb', 'Dec'];
+  months.sort();
+  console.log('sort:', months);
+  hr()
+
+  /**
+   * splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容
+   * 改变原数组。
+   * */
+  const months1 = ['Jan', 'March', 'April', 'June'];
+  months1.splice(1, 0, 'Feb');
+  // inserts at index 1
+  console.log(months1);
+  // expected output: Array ["Jan", "Feb", "March", "April", "June"]
+  months1.splice(4, 1, 'May');
+  // replaces 1 element at index 4
+  console.log('splice:', months1);
+  hr()
+
+  /**
+   * unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度
+   * 改变原数组
+   * */
+  const arrg = [1, 2, 3];
+  console.log(arrg.unshift(4, 5));
+  // expected output: 5
+  console.log('unshift:', arrg);
+  hr()
+</script>
+</body>
+</html>
