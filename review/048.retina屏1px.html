@@ -4,14 +4,44 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
+<style>
+  .box {
+    width: 100%;
+    height: 200px;
+    background: yellow;
+    position: relative;
+  }
+  .box:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    box-sizing: border-box;
+    /*padding: 1px;*/
+    transform-origin: 0 0;
+    pointer-events: none;
+    border: 0 solid #000000;
+    border-bottom-width: 1px;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
 <body>
 <!--
-1. 通过比变换属性
-2.
+
+主要是通过给目标元素添加position:relative;
+然后再用其伪类:after或者:before画一个2倍或者3倍宽高的元素;
+然后给伪类元素画一个1px的边框;
+通过media query决定缩放伪类元素到1/2或者1/3;
+给伪类元素增加pointer-events: none;, 这样伪类元素可以点击穿透, 也就是能看到, 但是不触发任何默认事件(click等);
 
 -->
-<div style="height: 1px;background: black;margin-top: 300px">
-
-</div>
+<div class="box"></div>
 </body>
 </html>
