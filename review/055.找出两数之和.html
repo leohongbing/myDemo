@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  const nums = [2, 7, 11, 15]
+  const target = 9
+  var res = []
+  nums.forEach((item, index) => {
+    if (item > target) return
+    let sub = target - item
+
+    const subIndex = nums.indexOf(sub, index)
+    subIndex > -1 && res.push(index, subIndex)
+  })
+  console.log(res)
+</script>
+</body>
+</html>

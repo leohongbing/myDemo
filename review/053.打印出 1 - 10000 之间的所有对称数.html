@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  let arr = []
+  let i = 0
+  while (i < 10000) {
+    symmetry(i) && arr.push(i)
+    i++
+  }
+
+  function symmetry(str) {
+    str = String(str)
+    if(str.length < 2) return false
+    return str.split('').reverse().join('') === str
+  }
+  console.log(arr)
+</script>
+</body>
+</html>

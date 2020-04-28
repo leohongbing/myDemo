@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  var str = 'you are my my sunshine'
+  var str1 = 'my'
+
+  const find = (S, T) => {
+    if (S.length < T.length) return -1
+    for (let i = 0; i < S.length; i++) {
+      if (S.slice(i, i + T.length) === T) return i
+    }
+    return -1
+  }
+  console.log(find(str, str1))
+
+</script>
+</body>
+</html>
