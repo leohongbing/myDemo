@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="mService_positionSearchAndMap">
+  <!--head-->
+  <div class="mCommon_basicHeaderToorBar clearfix" style="/* display: block; */">
+            <span class="left" id="closeBtn">
+                <i class="mCommon_basicHeaderToorBar_text left" tapclass="mCommon_basicHeaderToorBar_textTap"
+                   style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">关闭</i>
+            </span>
+  </div>
+  <div id="dom1" style="text-align: center;font-size: 14px;font-weight: 600;padding-top: 10px;display: none">
+    请选择收货地址
+  </div>
+  <div id="switchCities" class="clearfix" style="padding: 10px 0px; display: block;">
+          <span class="left" style="width: 43px;height: 34px;/* background: antiquewhite; */float: left;">
+    <span style="
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    width: 25px;
+    height: 16px;
+    /* transform: rotate(-45deg); */
+    /* background: aliceblue; */
+    color: #b5b5b5;
+" class="back">关闭</span>
+              <div class="mCommon_basicSelect mCommon_basicSelect2"
+                   style="padding-left: 0;padding-right: 0;padding: 5px 18px;border: none;margin-left: 7px;height: 24px;display: none;">
+    <span style="
+    position: absolute;
+    left: 7px;
+    top: 9px;
+    width: 10px;
+    height: 16px;
+    /* transform: rotate(-45deg); */
+    /* background: aliceblue; */
+" class="back"></span>
+    <input type="text" id="mobiscroll1588141952583_dummy" value="西城区" class="" placeholder="请选择城市"
+           style="text-align: center;border: none;outline: none;background: transparent;display: none;">
+                <ul id="mobiscroll1588141952583" style="display: none;">
+                </ul>
+              </div>
+          </span>
+    <span class="right" id="returnBtn" style="width: 81%;float: left;">
+                <input id="inputDomt" name="inputDom" type="text"
+                       style="width: 100%;height: 34px;border: none;padding: 0px 8px;/* border: 1px solid #f3f3f3; */border-radius: 6px;background: #f7f7f7;color: #d2d2d2;"
+                       value="请输入您的收货地址" class="test">
+            </span>
+  </div>
+  <!--search-->
+  <div class="mCommon_basicSearch_box mCommon_basicSearchAndBtn" style="display: none;">
+    <!--搜索输入-->
+    <div class="mCommon_basicSearch">
+      <div class="mCommon_basicSearchInputWrapper">
+        <!--搜索图标-->
+        <em class="mCommon_basicSearchIcon"></em>
+        <!--搜索图标 end-->
+        <input id="keyword" name="keyword" type="text" placeholder="搜索附近位置" value="" class="">
+      </div>
+      <!--清空-->
+      <div class="mCommon_basicSearchClear" style="display: none;"><em></em></div>
+      <!--清空end-->
+    </div>
+    <!--按钮-->
+    <div id="cancel" class="mCommon_basicSearchBtn">
+      <a href="####">取消</a>
+    </div>
+  </div>
+  <!--search end-->
+  <!--map-->
+  <div id="_LbsContainer" class="mService_positionMap amap-container"
+       style="position: relative; background: rgb(252, 249, 242); height: 234.375px; visibility: visible;">
+    <object
+      style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;"
+      type="text/html" data="about:blank"></object>
+    <div class="amap-maps">
+      <div class="amap-drags" style="">
+        <div class="amap-layers" style="transform: translateZ(0px);">
+          <div class="amap-layer" style="position: absolute; z-index: 0; top: 5725px; left: 4910px;">
+            <canvas height="512" width="512"
+                    style="position: absolute; top: -5697px; left: -4575px; width: 256px; height: 256px; z-index: 17;"></canvas>
+            <canvas height="512" width="512"
+                    style="position: absolute; top: -5953px; left: -4575px; width: 256px; height: 256px; z-index: 17;"></canvas>
+            <canvas height="512" width="512"
+                    style="position: absolute; top: -5697px; left: -4831px; width: 256px; height: 256px; z-index: 17;"></canvas>
+            <canvas height="512" width="512"
+                    style="position: absolute; top: -5953px; left: -4831px; width: 256px; height: 256px; z-index: 17;"></canvas>
+            <canvas height="512" width="512"
+                    style="position: absolute; top: -5697px; left: -5087px; width: 256px; height: 256px; z-index: 17;"></canvas>
+            <canvas height="512" width="512"
+                    style="position: absolute; top: -5953px; left: -5087px; width: 256px; height: 256px; z-index: 17;"></canvas>
+          </div>
+          <div class="amap-markers" style="position: absolute; z-index: 120; top: 117px; left: 187px;">
+            <div class="amap-marker"
+                 style="top: -11px; left: -11px; z-index: 100; transform: rotate(0deg); transform-origin: 11px 11px; display: block;">
+              <div class="amap-marker-content" style="opacity: 1;">
+                <div style="width:23px;height:23px;overflow:hidden;"><img style="position:relative;cursor:pointer;"
+                                                                          width="23px" height="23px"
+                                                                          src="https://webapi.amap.com/theme/v1.3/markers/b/loc.png">
+                </div>
+              </div>
+            </div>
+            <div class="amap-marker"
+                 style="top: -30px; left: -10px; z-index: 100; transform: rotate(0deg); transform-origin: 10px 30px; display: block;">
+              <div class="amap-icon" style="position: absolute; overflow: inherit; opacity: 1;"><img
+                src="/resources/v1/images/lbs_hot.png" style="top: 0px; left: 0px;"></div>
+            </div>
+          </div>
+          <canvas class="amap-layer" width="750" height="468"
+                  style="position: absolute; z-index: 1; height: 234px; width: 375px; top: 0px; left: 0px;"></canvas>
+          <canvas class="amap-labels" draggable="false"
+                  style="position: absolute; z-index: 99; height: 234px; width: 375px; top: 0px; left: 0px;" width="750"
+                  height="468"></canvas>
+        </div>
+        <div class="amap-overlays" style=""></div>
+      </div>
+    </div>
+    <div style="display: none;"></div>
+    <div class="amap-controls">
+      <div class="amap-geolocation-con" style="position: absolute; z-index: 9999; left: 10px; bottom: 20px;">
+        <div class="amap-geo"></div>
+      </div>
+    </div>
+    <a class="amap-logo" href="http://m.amap.com" target="_blank"><img
+      src="https://webapi.amap.com/theme/v1.3/logo@2x.png"></a>
+    <div class="amap-copyright" style="display: none;"><!--v1.3.28--> © 2020 AutoNavi <span class="amap-mcode">- GS(2018)1709号</span>
+    </div>
+  </div>
+  <!--map end-->
+</div>
+<div id="wrapper" class="mCommon_jsPullToRefresh_wrapper"
+     style="overflow: hidden; left: 0px; top: 290px; visibility: visible;">
+  <div id="scroller" class="mCommon_jsPullToRefresh_scroller"
+       style="transition-property: transform; transform-origin: 0px 0px; transform: translate(0px, 0px) scale(1) translateZ(0px);">
+    <div class="mCommon_basicPositionList">
+      <div class="mCommon_basicPositionListItem common_position mCommon_basicPositionListItemCurrent"
+           tapclass="mCommon_basicPositionListItemTap" style="position: relative;">
+        <div class="mCommon_basicPositionListItem_position"><span
+          style="width: 8px; height: 8px; background-color: rgb(255, 147, 24); position: absolute; border-radius: 50%; left: 12px; top: 50%; transform: translateY(-50%);"></span>
+          <h3 id="hidden_locationName" class="textCut">金运大厦(西直门北大街辅路)</h3>
+          <p id="hidden_address" class="textCut">西直门北大街甲43号金运大厦</p>
+          <p id="hidden_lng" class="textCut" style="display: none">116.354742</p>
+          <p id="hidden_lat" class="textCut" style="display: none">39.950719</p>
+          <p id="hidden_province_city_district" class="textCut" style="display: none">北京市西城区</p></div>
+      </div>
+      <div class="mCommon_basicPositionListItem common_position" tapclass="mCommon_basicPositionListItemTap"
+           style="padding-left: 32px;position: relative;">
+        <div class="mCommon_basicPositionListItem_position"><span
+          style="width: 8px;height: 8px;position: absolute;border-radius: 50%;left: 12px;top: 50%;transform: translateY(-50%);background-color: #cacaca;"></span>
+          <h3 id="hidden_locationName" class="textCut">金运大厦-41号院</h3>
+          <p id="hidden_address" class="textCut">西直门北大街甲41号</p>
+          <p id="hidden_lng" class="textCut" style="display: none">116.354934</p>
+          <p id="hidden_lat" class="textCut" style="display: none">39.950345</p>
+          <p id="hidden_province_city_district" class="textCut" style="display: none">北京市西城区</p></div>
+      </div>
+    </div>
+    <div id="pullUp" style="visibility: visible;" class=""><span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多</span>
+    </div>
+  </div>
+  <div
+    style="position: absolute; z-index: 100; width: 7px; bottom: 2px; top: 2px; right: 1px; pointer-events: none; transition-property: opacity; transition-duration: 350ms; overflow: hidden; opacity: 0;">
+    <div
+      style="position: absolute; z-index: 100; background: padding-box padding-box rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.9); box-sizing: border-box; width: 100%; border-radius: 3px; pointer-events: none; transition-property: transform; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, 0px) translateZ(0px); height: 91px;"></div>
+  </div>
+</div>
+
+</body>
+</html>

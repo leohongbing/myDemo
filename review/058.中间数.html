@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+  nums1 = [1, 2]
+  nums2 = [4]
+
+  var arr = nums1.concat(nums2)
+  var res
+  // 奇数
+  if(arr.length % 2 > 0){
+    res = arr[Math.floor(arr.length/2)]
+  }else {
+    res = (arr[Math.floor(arr.length/2)] + arr[Math.floor(arr.length/2)-1]) / 2
+  }
+  console.log(res)
+</script>
+</body>
+</html>

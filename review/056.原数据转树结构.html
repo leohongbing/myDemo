@@ -17,49 +17,68 @@
     {id: 8, name: '部门H', parentId: 4},
   ];
 
-  function convert(arr) {
-    debugger
-    let res = []
-    let queue = []
-    arr.forEach(item => {
-      // 找出根节点
-      item.parentId === 0 && queue.push(item)
-    })
-    let obj = {}
-    while (queue.length > 0) {
-      let head = queue.shift()
-      head.children = []
-      if(head.parentId === 0){
-        obj = {}
-        obj.id = head.id
-        obj.name = head.name
-        obj.parentId = head.parentId
-        obj.children = head.children
+  // function convert(arr) {
+  //   debugger
+  //   let res = []
+  //   let queue = []
+  //   arr.forEach(item => {
+  //     // 找出根节点
+  //     item.parentId === 0 && queue.push(item)
+  //   })
+  //   let obj = {}
+  //   while (queue.length > 0) {
+  //     let head = queue.shift()
+  //     head.children = []
+  //     if(head.parentId === 0){
+  //       obj = {}
+  //       obj.id = head.id
+  //       obj.name = head.name
+  //       obj.parentId = head.parentId
+  //       obj.children = head.children
+  //     }
+  //
+  //
+  //     // 找到该id下所有子元素
+  //     list.forEach(item => {
+  //       let child = {
+  //         id: '',
+  //         name: '',
+  //         parentId: '',
+  //         children: []
+  //       }
+  //       if (head.id === item.parentId) {
+  //         child.id = item.id
+  //         child.name = item.name
+  //         child.parentId = item.parentId
+  //         head.children.push(child)
+  //         queue.unshift(child)
+  //       }
+  //     })
+  //     head.parentId === 0 && res.push(obj)
+  //   }
+  //
+  //   return res
+  // }
+  // console.log(convert(list))
+
+  function convert(list) {
+    const res = []
+    const map = list.reduce((res, v) => (res[v.id] = v, res), {})
+    for (const item of list) {
+      if (item.parentId === 0) {
+        res.push(item)
+        continue
       }
-
-
-      // 找到该id下所有子元素
-      list.forEach(item => {
-        let child = {
-          id: '',
-          name: '',
-          parentId: '',
-          children: []
-        }
-        if (head.id === item.parentId) {
-          child.id = item.id
-          child.name = item.name
-          child.parentId = item.parentId
-          head.children.push(child)
-          queue.unshift(child)
-        }
-      })
-      head.parentId === 0 && res.push(obj)
+      if (item.parentId in map) {
+        const parent = map[item.parentId]
+        parent.children = parent.children || []
+        parent.children.push(item)
+      }
     }
-
     return res
   }
   console.log(convert(list))
+
 </script>
 </body>
 </html>
