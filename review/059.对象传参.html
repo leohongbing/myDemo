@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="../utils/utils.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 对象传参传递的是对象的地址, 改变不了原对象的引用地址
+   * */
+  function changeObjProperty(o) {
+    o.siteUrl = "http://www.baidu.com"
+    o = new Object()
+    o.siteUrl = "http://www.google.com"
+  }
+
+  let webSite = new Object();
+  changeObjProperty(webSite);
+  console.log(webSite.siteUrl);
+  hr()
+
+  function Foo() {
+    Foo.a = function () {
+      console.log(1)
+    }
+    this.a = function () {
+      console.log(2)
+    }
+  }
+
+  Foo.prototype.a = function () {
+    console.log(3)
+  }
+  Foo.a = function () {
+    console.log(4)
+  }
+  Foo.a();
+  let obj = new Foo();
+  obj.a();
+  Foo.a();
+
+  hr()
+
+
+  function print(n) {
+    setTimeout(
+      (function(){
+      console.log(n)
+      })(), Math.floor(Math.random() * 1000));
+  }
+
+  for (var i = 0; i < 100; i++) {
+    print(i);
+  }
+</script>
+</body>
+</html>
