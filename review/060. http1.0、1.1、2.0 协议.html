@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table role="table">
+  <thead>
+  <tr>
+    <th></th>
+    <th align="left">1.0</th>
+    <th align="left">1.1</th>
+    <th align="left">2.0</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>长连接</td>
+    <td align="left">需要使用<code>keep-alive</code> 参数来告知服务端建立一个长连接</td>
+    <td align="left">默认支持</td>
+    <td align="left">默认支持</td>
+  </tr>
+  <tr>
+    <td>HOST域</td>
+    <td align="left">✘</td>
+    <td align="left"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+    <td align="left"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+  </tr>
+  <tr>
+    <td>多路复用</td>
+    <td align="left">✘</td>
+    <td align="left">-</td>
+    <td align="left"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+  </tr>
+  <tr>
+    <td>数据压缩</td>
+    <td align="left">✘</td>
+    <td align="left">✘</td>
+    <td align="left">使用<code>HAPCK</code>算法对header数据进行压缩，使数据体积变小，传输更快</td>
+  </tr>
+  <tr>
+    <td>服务器推送</td>
+    <td align="left">✘</td>
+    <td align="left">✘</td>
+    <td align="left"><g-emoji class="g-emoji" alias="heavy_check_mark" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
