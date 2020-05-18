@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <span>{{ msg }}</span>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    debugger
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          msg: 'msg'
+        }
+      }
+    })
+  }
+</script>
+</body>
+</html>
